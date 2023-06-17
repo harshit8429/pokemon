@@ -3,5 +3,14 @@ const categoryController=require("../controllers/categoryController");
 
 
 const router=express.Router();
+//Get all categories
+router.get('/all',categoryController.getAll); 
+//Create new category
+router.post('/create',categoryController.create);
+//Update a category
+router.put('/update/:id',categoryController.update);
+//delete a category
+router.delete('/delete/:id',categoryController.delete);
 
-router.get('/all',categoryController.getAll);
+
+module.exports=router;
